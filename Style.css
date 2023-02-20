@@ -1,0 +1,204 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+:root {
+    --primary: #7964ae;
+    --secondary: #201335;
+    --dark: #F3F3F3;
+    --light: #202020;
+  }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    background-color: whitesmoke;
+}
+
+header{
+    background-color: white;
+}
+
+button{
+    padding: 8px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+button:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.container{
+    width: 95%;
+    margin:auto;
+
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    padding: 20px 0;
+    background-color: white;
+}
+
+#nav button{
+    font-family: inherit;
+}
+
+.create-box{
+    width: 380px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.create-box textarea{
+width: 100%;
+border-radius: 5px;
+font-family: inherit;
+border: 1px solid lightgrey;
+}
+
+.create-box button{
+    width: fit-content;
+}
+
+.flashcards{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin:auto;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+.flashcard{
+    width: 370px;
+    height: 200px;
+    padding: 20px;
+    word-wrap: break-word;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    perspective: 1000px;
+    
+ }
+  .fc__inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    }
+    
+    .fc__inner.is-flipped {
+    transform: rotateY(180deg);
+    }
+    
+    
+    .fc__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .fc__face--front {
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .fc__face--front h2 {
+    color: #FFF;
+    font-size: 32px;
+    }
+    
+    .fc__face--back {
+    background-color: var(--light);
+    transform: rotateY(180deg);
+    }
+    
+    .fc__content {
+    width: 100%;
+    height: 100%;
+    }
+    
+    .fc__header {
+    position: relative;
+    padding: 30px 30px 40px;
+    }
+    
+    .fc__header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+    z-index: -1;
+    border-radius: 0px 0px 50% 0px;
+    }
+    
+    .fc__header h2 {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    }
+    
+    .fc__body {
+    padding: 30px;
+    }
+    
+    .fc__body p {
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.4;
+    }
+   
+
+@media(max-width:768px){
+    .flashcard{
+        margin:auto;
+    }
+    .flashcard{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:480px){
+    #nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    .create-box{
+        width: 100%;
+
+    }
+    .flashcard{
+        width: 100px;
+    }
+}
